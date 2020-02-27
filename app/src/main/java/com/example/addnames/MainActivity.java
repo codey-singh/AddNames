@@ -29,15 +29,12 @@ public class MainActivity extends AppCompatActivity {
         final ArrayAdapter<String> arrayAdapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, ns.getNames());
         listNames.setAdapter(arrayAdapter);
-//        arrayAdapter.notifyDataSetChanged();
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name_txt = name.getText().toString();
                 ns.putName(name_txt);
                 arrayAdapter.notifyDataSetChanged();
-//                listNames.invalidateViews();
             }
         });
     }
